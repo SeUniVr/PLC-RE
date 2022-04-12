@@ -9,8 +9,8 @@ echo "JSON files generated successfully\nJSON convertion to CSV .... "
 python3 convertoCSV.py 
 python3 mergeDatasets.py
 echo "CSV Dataset generated successfully "
-Adjust Daikon directory
-export DAIKONDIR=/home/thunderlord/Desktop/daikon-5.8.10; source $DAIKONDIR/scripts/daikon.bashrc
+# Adjust Daikon directory
+export DAIKONDIR=/path_to_daikon_directory/; source $DAIKONDIR/scripts/daikon.bashrc
 perl $DAIKONDIR/scripts/convertcsv.pl PLC1_PLC2_PLC3_Dataset.csv
 java -cp $DAIKONDIR/daikon.jar daikon.Daikon --nohierarchy PLC1_PLC2_PLC3_Dataset.decls PLC1_PLC2_PLC3_Dataset.dtrace > daikon_results.txt
 echo "Invariants generated successfully :"
