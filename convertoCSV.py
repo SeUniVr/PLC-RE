@@ -62,6 +62,6 @@ def convert(plc) :
          
     print(df)
     df.to_csv(r'PLC'+plc+'Dataset.csv', index = False)
-convert(1)
-convert(2)
-convert(3)
+convert(str(1))
+convert(str(2))
+convert(str(3))
