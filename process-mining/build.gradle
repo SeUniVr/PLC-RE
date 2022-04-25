@@ -18,3 +18,18 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+task(runMessages, dependsOn: 'classes', type: JavaExec) {
+   main = 'it.univr.mining.MinePlcMessages'
+   classpath = sourceSets.main.runtimeClasspath
+}
+
+task(runReadings, dependsOn: 'classes', type: JavaExec) {
+   main = 'it.univr.mining.MinePlcReadings'
+   classpath = sourceSets.main.runtimeClasspath
+}
+
+task(Merge, dependsOn: 'classes', type: JavaExec) {
+   main = 'it.univr.mining.MergeLogs'
+   classpath = sourceSets.main.runtimeClasspath
+}
