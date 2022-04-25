@@ -61,7 +61,7 @@ def convert(plc) :
 
          
     print(df)
-    df.to_csv(r'PLC'+plc+'Dataset.csv', index = False)
+    df.to_csv(r'PLC_CSV/PLC'+plc+'Dataset.csv', index = False)
 convert(str(1))
 convert(str(2))
 convert(str(3))
