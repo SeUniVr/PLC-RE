@@ -35,7 +35,7 @@ Tshark to generate pcap files, then wireshark to convert to csv
 ## 4.1 Data processing
 
 Execute the script 	**convertoCSV.py** then **mergeDatasets.py** to convert the JSON files to a CSV datasets.  
-The resulted files are savec in the directory PLC_CSV.
+The resulted files are saved in the directory PLC_CSV.
  
 
 ## 4.2 Invariant inference
