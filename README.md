@@ -34,17 +34,19 @@ Tshark to generate pcap files, then wireshark to convert to csv
 
 ## 4.1 Data processing
 
-Execute the script 	**convertoCSV.py** then **mergeDatasets.py** to convert the Json files into a CSV datasets. 
-The CSV format is required for the invariant inference step. 
+Execute the script 	**convertoCSV.py** then **mergeDatasets.py** to convert the JSON files to a CSV datasets.  
+The resulted files are savec in the directory PLC_CSV.
  
 
 ## 4.2 Invariant inference
-The invariant generation is done using Daikon. To install Daikon follow the guide. 
+The invariant generation is done using Daikon. To install Daikon follow the [guide](Installation_Daikon.sh). 
 Execute the bash script **run.sh** to generate the invariants. 
 ```
   ./run.sh
   
 ```
+The results of invariant generation will be saved in the file Daikon_Invariants/daikon_results.txt.
+
 
 
 
