@@ -36,6 +36,11 @@ Tshark to generate pcap files, then wireshark to convert to csv
 
 Execute the script 	**convertoCSV.py** then **mergeDatasets.py** to convert the JSON files to a CSV datasets.  
 The resulted files are saved in the directory PLC_CSV.
+ ```
+  python3 convertoCSV.py
+  python3 mergeDatasets.py
+  
+```
  
 
 ## 4.2 Invariant inference
@@ -55,7 +60,7 @@ Execute the script **plots.py** to plot the run charts of one or many variables.
 ```
   python3 plots.py var1 var2 .... varn
 ```
-Execute the script **plot_hist.py** to plot the histograms and statistical informations of a variable
+Execute the script **plot_hist.py** to plot the histograms and statistical informations of a variable.
 ```
   python3 plot_hist.py var
   
