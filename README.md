@@ -39,8 +39,8 @@ sudo apt install perl
 sudo apt install wireshark
 ```
 - Daikon 5.8.10 : [installation](Installation_Daikon.sh)
-- Fluxicon Disco 3.2.4 : [installation](https://fluxicon.com/disco/)
-
+- Fluxicon Disco 3.2.4 : [installation](https://fluxicon.com/disco/)  
+ Disco is not supported by Unix-like operating systems. The users can use [Wine](https://www.winehq.org/) to install and run this software.
 
 # 3. Information gathering
 
@@ -59,7 +59,7 @@ Tshark to generate pcap files, then wireshark to convert to csv
 ## 4.1 Data processing
 
 Execute the script 	**_convertoCSV.py_** then **_mergeDatasets.py_** to convert the JSON files to a CSV datasets.    
-this executions are two CSV files saved in the directories _PLC_CSV_ and _process-mining/data_.  
+The outputs are two CSV files saved in the directories _PLC_CSV_ and _process-mining/data_.  
  ```
   python3 convertoCSV.py
   python3 mergeDatasets.py 
@@ -70,7 +70,7 @@ The file saved in _PLC_CSV_ is an enriched dataset with a partial bounded histor
  
 
 ## 4.2 Invariant inference
-The invariant generation is done using Daikon. To install Daikon follow the [guide](Installation_Daikon.sh).   
+The invariant generation is done using [Daikon](https://plse.cs.washington.edu/daikon/). To install Daikon follow the [guide](Installation_Daikon.sh).   
 Execute the bash script **_run.sh_** to generate the invariants. 
 ```
   ./run.sh 
