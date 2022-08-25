@@ -70,7 +70,7 @@ The file saved in _PLC_CSV_ is an enriched dataset with a partial bounded histor
  
 
 ## 4.2 Invariant inference
-The invariant generation is done using [Daikon](https://plse.cs.washington.edu/daikon/). To install Daikon follow the [guide](Installation_Daikon.sh).   
+The invariant generation is done using [Daikon](https://plse.cs.washington.edu/daikon/). To install Daikon follow the [guide](Installation_Daikon.sh).     
 Execute the bash script **_run.sh_** to generate the invariants. 
 ```
   ./run.sh 
@@ -86,16 +86,25 @@ VAR1 > VAR2
 VAR1 == VAR3 && VAR1 != VAR4
 ```
 
-The results of invariant analysis will be saved in the location **_Daikon_Invariants/daikon_results.txt_**.
+The results of the invariant analysis will be saved in the location **_Daikon_Invariants/daikon_results.txt_**.
 
 ## 4.3 Interactive graphs and statistical analysis
-Execute the script **_plots.py_** to plot the run charts of one or many variables.   
+
+Execute the script **_Runchartplots.py_** :    
 ```
-  python3 plots.py var1 var2 .... varn
+  python3 chartplots.py var1 var2 .... varn
 ```
-Execute the script **_plot_hist.py_** to plot the histograms and statistical informations of a variable.  
+The outputs of this execution are a run-sequence plots of the specified variables in function of the simulation time.  
+  
+Execute the script **_Histplots_stats.py_** : 
 ```
-  python3 plot_hist.py var  
+  python3 Histplots_stats.py var  
 ```
+The outputs of this execution are a histogram and statistical informations of a given variable.  
+These informations include :
+- The mean, median, standard deviation, the maximum and minimum values.  
+- The statistical distribtuions.  
+Two tests are used Chi-squared test for uniformity and Shapiro-Wilk test for normality.
+
 
 ## 4.4 Business process mining
