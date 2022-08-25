@@ -59,38 +59,38 @@ Tshark to generate pcap files, then wireshark to convert to csv
 
 ## 4.1 Data processing
 
-Execute the script 	**convertoCSV.py** then **mergeDatasets.py** to convert the JSON files to a CSV datasets.  
-The resulted files are saved in the directory PLC_CSV and process-mining/data.
+Execute the script 	**convertoCSV.py** then **mergeDatasets.py** to convert the JSON files to a CSV datasets.    
+The resulted files are saved in the directory PLC_CSV and process-mining/data.  
  ```
   python3 convertoCSV.py
   python3 mergeDatasets.py 
 ```
-The outputs of this executions are two CSV files. 
-The file saved in process-mining/data is a timestamped dataset, it will be used for the business process mining. 
-The file saved in PLC_CSV is an enriched dataset with a partial bounded history of registers, and additional informations such as stable states, slope values of measurements and relative setpoints. This dataset will be used for the invariant detection. 
+The outputs of this executions are two CSV files.   
+The file saved in process-mining/data is a timestamped dataset, it will be used for the business process mining.   
+The file saved in PLC_CSV is an enriched dataset with a partial bounded history of registers, and additional informations such as stable states, slope values of measurements and relative setpoints. This dataset will be used for the invariant detection.   
 
  
 
 ## 4.2 Invariant inference
-The invariant generation is done using Daikon. To install Daikon follow the [guide](Installation_Daikon.sh). 
+The invariant generation is done using Daikon. To install Daikon follow the [guide](Installation_Daikon.sh).   
 Execute the bash script **run.sh** to generate the invariants. 
 ```
   ./run.sh 
 ```
-The results of invariant analysis will be saved in the file Daikon_Invariants/daikon_results.txt.
-This script offers a query system to target specific invariants and to specify conditional invariants.
-The user have the possibility to insert a variable name in order to display the associated invariants. 
-The user can customize the [splitter info file](https://plse.cs.washington.edu/daikon/download/doc/daikon/Enhancing-Daikon-output.html#Splitter-info-file-format) **Inv_conditions.spinfo** by specifying the conditions that Daikon should use to create conditional invariants. 
+The results of invariant analysis will be saved in the file **Daikon_Invariants/daikon_results.txt**.  
+This script offers a query system to target specific invariants and to specify conditional invariants.  
+The users have the possibility to insert a variable name in order to display the associated invariants.   
+The users can customize the [splitter info file](https://plse.cs.washington.edu/daikon/download/doc/daikon/Enhancing-Daikon-output.html#Splitter-info-file-format) **Daikon_Invariants/Inv_conditions.spinfo** by specifying the conditions that Daikon should use to create conditional invariants. 
 
 
 
 
 ## 4.3 Interactive graphs and statistical analysis
-Execute the script **plots.py** to plot the run charts of one or many variables. 
+Execute the script **plots.py** to plot the run charts of one or many variables.   
 ```
   python3 plots.py var1 var2 .... varn
 ```
-Execute the script **plot_hist.py** to plot the histograms and statistical informations of a variable.
+Execute the script **plot_hist.py** to plot the histograms and statistical informations of a variable.  
 ```
   python3 plot_hist.py var  
 ```
