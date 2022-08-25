@@ -48,7 +48,7 @@ sudo apt install wireshark
  Execute the script **main.py** to generate the data logs of the PLCs registers 
  
  ```
-  python3 main.py
+  python3 main.py 
 ```
 The output are JSON Files containg the values of all the PLC registers.
 
@@ -78,9 +78,9 @@ Execute the bash script **run.sh** to generate the invariants.
   ./run.sh 
 ```
 The results of invariant analysis will be saved in the file Daikon_Invariants/daikon_results.txt.
-
 This script offers a query system to target specific invariants and to specify conditional invariants.
-
+The user have the possibility to insert a variable name in order to display the associated invariants. 
+The user can customize the [splitter info file](https://plse.cs.washington.edu/daikon/download/doc/daikon/Enhancing-Daikon-output.html#Splitter-info-file-format) **Inv_conditions.spinfo** by specifying the conditions that Daikon should use to create conditional invariants. 
 
 
 
