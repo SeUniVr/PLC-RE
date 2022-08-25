@@ -40,7 +40,7 @@ sudo apt install wireshark
 ```
 - Daikon 5.8.10 : [installation](Installation_Daikon.sh)
 - Fluxicon Disco 3.2.4 : [installation](https://fluxicon.com/disco/)  
- Disco is not supported by Unix-like operating systems. The users can use [Wine](https://www.winehq.org/) to install and run this software.
+ Disco is not supported by Unix-like operating systems. The users make use of [Wine](https://www.winehq.org/) to install and run this software.
 
 # 3. Information gathering
 
@@ -107,8 +107,7 @@ Execute the script **_Histplots_stats.py_** :
 The outputs of this execution are a histogram and statistical informations of the variable _var_.  
 These informations include :
 - The mean, median, standard deviation, the maximum and minimum values.  
-- The statistical distribtuions.  
-Two tests are performed Chi-squared test for uniformity and Shapiro-Wilk test for normality.
+- Two tests are performed for the statistical distribution : Chi-squared test for uniformity and Shapiro-Wilk test for normality.  
 
 
 ## 4.4 Business process mining
