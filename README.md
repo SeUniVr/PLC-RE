@@ -11,26 +11,30 @@
 
 - Operating system: Unix-like environments, including Linux, Mac OS X, and Windows Subsystem for Linux (WSL) 
 - Python3.8 libraries: pandas, matplotlib, numpy, ray, json, glob, modbus_tk, scipy
-  ```
- sudo apt update
+ 
+ ```
+sudo apt update
  sudo apt install software-properties-common
  sudo add-apt-repository ppa:deadsnakes/ppa
  sudo apt install python3.8
  sudo apt install python3-pip
  pip3 install pandas matplotlib numpy json glob scipy  modbus_tk
  pip3 install -U ray
-  ```
+ ```
 - openjdk 14
+ 
  ```
  sudo apt install openjdk-14-jdk
  ```
 
 - perl 5
+ 
 ```
 sudo apt install perl
 ```
 
 - TShark - Wireshark 3.4.8
+ 
 ```
 sudo apt install wireshark
 ```
@@ -42,9 +46,9 @@ sudo apt install wireshark
 
 ## 3.1 PLC registers reading
  Execute the script **main.py** to generate the data logs of the PLCs registers 
+ 
  ```
   python3 main.py
-  
 ```
 The output are JSON Files containg the values of all the PLC registers.
 
@@ -59,8 +63,7 @@ Execute the script 	**convertoCSV.py** then **mergeDatasets.py** to convert the 
 The resulted files are saved in the directory PLC_CSV and process-mining/data.
  ```
   python3 convertoCSV.py
-  python3 mergeDatasets.py
-  
+  python3 mergeDatasets.py 
 ```
 The outputs of this executions are two CSV files. 
 The file saved in process-mining/data is a timestamped dataset, it will be used for the business process mining. 
@@ -72,8 +75,7 @@ The file saved in PLC_CSV is an enriched dataset with a partial bounded history 
 The invariant generation is done using Daikon. To install Daikon follow the [guide](Installation_Daikon.sh). 
 Execute the bash script **run.sh** to generate the invariants. 
 ```
-  ./run.sh
-  
+  ./run.sh 
 ```
 The results of invariant analysis will be saved in the file Daikon_Invariants/daikon_results.txt.
 
@@ -90,8 +92,7 @@ Execute the script **plots.py** to plot the run charts of one or many variables.
 ```
 Execute the script **plot_hist.py** to plot the histograms and statistical informations of a variable.
 ```
-  python3 plot_hist.py var
-  
+  python3 plot_hist.py var  
 ```
 
 ## 4.4 Business process mining
