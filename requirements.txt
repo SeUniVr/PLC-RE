@@ -1,0 +1,6 @@
+pandas
+ray
+json 
+modbus_tk
+logging
+itertools
