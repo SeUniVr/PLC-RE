@@ -59,7 +59,18 @@ sudo apt install wireshark
    
  - _samplingTime_ is the time frequency in seconds
 
-The output are JSON Files containg the values of all the PLC registers.
+Ray framework was used to get simultaneous data from the PLCs and  to seamlessly scale to a distributed attack architecture (eg. Botnet) if needed.
+The output are JSON Files, with the following naming convention:
+```
+ {name_of_the_PLC}-{ip_of_the_PLC}-{port_of_the_PLC}@{timestamp}.json
+```
+These files are saved in the folder _historian/_ contained in the main directory.
+To alter:
+
+ - *name_of_the_PLC* edit lines from 145 to 147
+ - *ip_of_the_PLC* edit lines from 145 to 147
+ - *port_of_the_PLC* edit lines from 145 to 147
+ - To *add or remove* a *PLC* edit lines from 145 to 147
 
 ## 3.2 Modbus message captures
 Tshark to generate pcap files, then wireshark to convert to csv
