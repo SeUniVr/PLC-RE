@@ -96,7 +96,7 @@ The results of the invariant analysis will be saved in the location **_Daikon_In
   
 Execute the script **_Runchartplots.py_** :    
 ```
-  python3 chartplots.py var1 var2 .... varn
+  python3 _Runchartplots.py var1 var2 .... varn
 ```
 The outputs of this execution are run-sequence plots of the specified variables in function of the simulation time.  
   
