@@ -1,3 +1,4 @@
+
 # 1. Overview
 - PLC registers reading
 - Modbus message captures
@@ -9,18 +10,21 @@
 
 # 2. Requirements
 
-- Operating system: Unix-like environments, including Linux, Mac OS X, and Windows Subsystem for Linux (WSL) 
-- Python3.8 libraries: pandas, matplotlib, numpy, ray, json, glob, modbus_tk, scipy
- 
+ - Operating system: Unix-like environments, including Linux, Mac OS X, and Windows Subsystem for Linux (WSL) 
+ - Python 3.8 and PIP 3
  ```
 sudo apt update
- sudo apt install software-properties-common
- sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt upgrade
  sudo apt install python3.8
  sudo apt install python3-pip
- pip3 install pandas matplotlib numpy json glob scipy  modbus_tk
- pip3 install -U ray
  ```
+ 
+ - Python3.8 libraries: pandas, matplotlib, numpy, ray, json, glob, modbus_tk, scipy
+  ```
+pip3 install -r requirements.txt
+ ```
+
+ 
 - openjdk 14
  
  ```
@@ -45,12 +49,16 @@ sudo apt install wireshark
 # 3. Information gathering
 
 ## 3.1 PLC registers reading
+ 
  Execute the script **_main.py_** to generate the data logs of the PLCs registers 
  ```
   python3 main.py simTime samplingTime
 ```
-_simTime_ is the simulation time of the CPS model in seconds.  
-_samplingTime_ is the time frequency in seconds 
+
+ - _simTime_ is the simulation time of the CPS model in seconds.  
+   
+ - _samplingTime_ is the time frequency in seconds
+
 The output are JSON Files containg the values of all the PLC registers.
 
 ## 3.2 Modbus message captures
