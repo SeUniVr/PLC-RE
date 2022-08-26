@@ -1,9 +1,8 @@
 import pandas as pd #json 
 import os
-from datetime import datetime # Per il timestamp dei file JSON (per uso futuro)
-import time #needed for sleep and to capture data for set amount of time
-import ray#thread parall, per usarlo basta inserire il decoratore @ray.remote sopra alla funzione interessata
-## Execute in parallel -> ray.get([plc1.remote(), plc2.remote()])
+from datetime import datetime 
+import time 
+import ray
 import json 
 from collections import defaultdict
 import modbus_tk
@@ -14,7 +13,6 @@ import itertools
 from time import sleep
 import sys
 
-#logger
 logger = modbus_tk.utils.create_logger("console", level=logging.DEBUG)
 
 logging.basicConfig(filename="plcHistoryTOOL",
@@ -25,35 +23,6 @@ logging.basicConfig(filename="plcHistoryTOOL",
 
 #parallel distributed execution
 ray.init()
-
-
-'''
-#timestamp1=[]
-#timestamp2=[]
-
-ora=datetime.now(tz=None)
-
-with open(f'historian/PLC1-{plc1}-{port1}@{ora}.json', 'w') as sp:
-            sp.write(json.dumps(single_plc_registers, indent=4))
-            #print(single_plc_registers)
-
-@ray.remote
-def test1():
-    ora=datetime.now(tz=None)
-    timestamp1.append(ora)
-    with open(f'PLC1@{ora}.json', 'w') as sp:
-        sp.write("test1")
-        #print(single_plc_registers)
-
-@ray.remote
-def test2():
-    ora=datetime.now(tz=None)
-    timestamp2.append(ora)
-    with open(f'PLC1@{ora}.json', 'w') as sp:
-        sp.write("test2")
-
-        #print(single_plc_registers)
-'''
 
 def connect_to_slave(ip,port):
     """Connect to the slave
@@ -144,7 +113,6 @@ def read_hr(master):
         c+=1    
     return(registers)
     
-    
 
 @ray.remote
 def read_registers(name,ip,port,master):
@@ -170,20 +138,9 @@ def main():
     master1 = connect_to_slave("127.0.0.1",8503)
     master2 = connect_to_slave("127.0.0.1",8504)
     
-    #hr = read_hr.remote("PLC1",master)
-    #hr1 = read_hr.remote("PLC2",master1)
-    #hr2 = read_hr.remote("PLC3",master2)
     
-    #logger.info(master.execute(1, cst.READ_HOLDING_REGISTERS, 1024, 12))
-    #logger.info(master1.execute(1, cst.READ_HOLDING_REGISTERS, 1024, 12))
-    #ray.get([hr,hr1,hr2])
-    
-    #ids = [hr, hr1,hr2]
-    
-    #ray.get(ids)
-    #read_registers("plc1","127.0.0.1",8502,master)
     t_end = time.time() + int(sys.argv[1])
-    #This will run for 15 min x 60 s = 900 seconds.
+    
     while time.time() < t_end:
         plc1=read_registers.remote("plc1","127.0.0.1",8502,master)
         plc2=read_registers.remote("plc2","127.0.0.1",8503,master1)
@@ -192,34 +149,6 @@ def main():
         ids = [plc1,plc2,plc3]
         ray.get(ids)
     
-    '''
-    ready, not_ready = ray.wait(ids)
-    print("ready: %s",len(ready))
-    print("not ready: %s",len(not_ready))
-    
-    while(True):
-        print("ready: %s",len(ready))
-        print("not ready: %s",len(not_ready))
-        ready, not_ready = ray.wait(ids)
-        ray.get(ready)
-        ids = not_ready
-        if not ids:
-            break
-    '''
-        
-    
-    '''
-    for i in range(1,40): 
-        ready, not_ready = ray.wait(ids)
-        print('iteration:', i) 
-        print('Ready length, values: ', len(ready), ray.get(ready))
-        print('Not Ready length:', len(not_ready))
-        ids = not_ready
-        if not ids:
-            break
-    '''
-
-
-
+   
 if __name__ == '__main__':
     main()
