@@ -169,4 +169,4 @@ The final step is to combine the resulting files in a single one to generate the
 The output files are saved in directory **_process-mining/data_**.  
 
 To generate the business process graphs:    
-Launch Disco > Open File > Select the file _MergeEvents.csv_ > Define each column role > Click Start Import
+_Launch Disco > Open File > Select the file **MergeEvents.csv** > Define each column role > Click Start Import_
