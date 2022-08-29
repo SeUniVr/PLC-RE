@@ -161,8 +161,11 @@ The second step is to convert the pcap file and the csv dataset into an admissib
 ./gradlew runMessages
 ./gradlew runReadings
 ```
-The final step is to combine the resulting files in a single file to generate the business process : 
+The final step is to combine the resulting files in a single one to generate the business process : 
 ```
 ./gradlew Merge
 ```
-The output files are saved in directory **_process-mining/data_** 
+The output files are saved in directory **_process-mining/data_**.  
+
+To generate the business process graphs:    
+Launch Daikon > Open File > Select the file _MergeEvents.csv_ > Define each column role > Click Start Import
