@@ -25,10 +25,10 @@ pip3 install -r requirements.txt
  ```
 
  
-- openjdk 14
+-  Java JDK version 8 or higher.
  
  ```
- sudo apt install openjdk-14-jdk
+sudo apt-get install openjdk-8-jdk
  ```
 - Gradle Build Tool : [installation](https://gradle.org/install/)
 
