@@ -50,7 +50,7 @@ wget https://www.wireshark.org/download/src/wireshark-3.4.8.tar.xz -O /tmp/wires
 
 - Daikon 5.8.10 : [installation](Installation_Daikon.sh)
 - Fluxicon Disco 3.2.4 : [installation](https://fluxicon.com/disco/)  
- Disco is not supported by Unix-like operating systems. The users can make use of [Wine](https://www.winehq.org/) or [Darling] (https://www.darlinghq.org/)to install and run this software.
+ Disco is not supported by Unix-like operating systems. The users can make use of [Wine](https://www.winehq.org/) or [Darling](https://www.darlinghq.org/) to install and run this software.
 
 # 3. Information gathering
 
