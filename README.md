@@ -48,7 +48,7 @@ wget https://www.wireshark.org/download/src/wireshark-3.4.8.tar.xz -O /tmp/wires
 ```
 - Daikon 5.8.10 : [installation](Installation_Daikon.sh)
 - Fluxicon Disco 3.2.4 : [installation](https://fluxicon.com/disco/)  
- Disco is not supported by Unix-like operating systems. The users make use of [Wine](https://www.winehq.org/) to install and run this software.
+ Disco is not supported by Unix-like operating systems. The users can make use of [Wine](https://www.winehq.org/) to install and run this software.
 
 # 3. Information gathering
 
@@ -61,7 +61,7 @@ wget https://www.wireshark.org/download/src/wireshark-3.4.8.tar.xz -O /tmp/wires
 
  - _simTime_ is the simulation time of the CPS model in seconds.  
    
- - _samplingTime_ is the time frequency in seconds
+ - _samplingTime_ is the sampling frequency in seconds.
 
 Ray framework was used to get simultaneous data from the PLCs and  to seamlessly scale to a distributed attack architecture (eg. Botnet) if needed.
 The output are JSON Files, with the following naming convention:
@@ -108,7 +108,7 @@ The file saved in _PLC_CSV_ is an enriched dataset with a partial bounded histor
  
 
 ## 4.2 Invariant inference
-The invariant generation is done using the front-end tool of [Daikon](https://plse.cs.washington.edu/daikon/). To install Daikon follow the [guide](Installation_Daikon.sh).     
+The invariant generation is done using the front-end tool of [Daikon](http://plse.cs.washington.edu/daikon/download/doc/daikon.html#convertcsv_002epl) for CSV dataset. To install Daikon follow the [guide](Installation_Daikon.sh).     
 Execute the bash script **_run.sh_** to generate the invariants. 
 ```
   ./run.sh 
@@ -145,3 +145,7 @@ These informations include :
 
 
 ## 4.4 Business process mining
+
+This step relies on Disco to generate graphs representing the business process. 
+
+
