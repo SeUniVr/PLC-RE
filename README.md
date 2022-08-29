@@ -30,6 +30,7 @@ pip3 install -r requirements.txt
  ```
  sudo apt install openjdk-14-jdk
  ```
+- Gradle Build Tool : [installation](https://gradle.org/install/)
 
 - perl 5
  
@@ -46,6 +47,7 @@ sudo apt install wireshark
 ```
 wget https://www.wireshark.org/download/src/wireshark-3.4.8.tar.xz -O /tmp/wireshark-3.0.0.tar.xz tar -xvf /tmp/wireshark-3.4.8.tar.xz cd /tmp/wireshark-3.0.0 sudo apt update && sudo apt dist-upgrade sudo apt install cmake libglib2.0-dev libgcrypt20-dev flex yacc bison byacc \ libpcap-dev qtbase5-dev libssh-dev libsystemd-dev qtmultimedia5-dev \ libqt5svg5-dev qttools5-dev cmake . make sudo make install
 ```
+
 - Daikon 5.8.10 : [installation](Installation_Daikon.sh)
 - Fluxicon Disco 3.2.4 : [installation](https://fluxicon.com/disco/)  
  Disco is not supported by Unix-like operating systems. The users can make use of [Wine](https://www.winehq.org/) to install and run this software.
