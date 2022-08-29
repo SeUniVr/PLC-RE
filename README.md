@@ -97,6 +97,10 @@ Tshark generates a pcap-ng files that contains all the information about the cap
 ## 4.1 Data processing
 
 The goal of the data processing is to convert the resulted files from the information gathering into datasets acceptable by invariant detection and business process mining tools.  
+The column hold the values of the PLC registers of each PLC  with the following naming convention:  
+```
+ {name_of_the_PLC}_{name_of_the_Register}
+```
 
 Execute the script 	**_convertoCSV.py_** then **_mergeDatasets.py_** to convert the JSON files to a CSV datasets.    
 The outputs are two CSV files saved in the directories _PLC_CSV_ and _process-mining/data_.  
@@ -168,4 +172,4 @@ The final step is to combine the resulting files in a single one to generate the
 The output files are saved in directory **_process-mining/data_**.  
 
 To generate the business process graphs:    
-Launch Daikon > Open File > Select the file _MergeEvents.csv_ > Define each column role > Click Start Import
+Launch Disco > Open File > Select the file _MergeEvents.csv_ > Define each column role > Click Start Import
