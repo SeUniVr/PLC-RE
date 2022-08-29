@@ -141,11 +141,26 @@ VAR1 > VAR2
 VAR1 == VAR3 && VAR1 != VAR4
 ```
 
-The results of the invariant analysis will be saved in the location **_Daikon_Invariants/daikon_results.txt_**.
-
+The results of the invariant analysis will be saved in the location **_Daikon_Invariants/daikon_results.txt_**.  
+The conditional invariant will be saved in the location **_Daikon_Invariants/daikon_results_cond.txt_**.
 
 ## 4.4 Business process mining
 
 This step relies on Disco to generate graphs representing the business process. 
+Disco takes as input a txt file containing the exchanged messages between the PLCs on the CPS model and the values of the PLC registers.  
+To create this txt file we use a java program to convert the pcap files and the CSV dataset generated from the previous steps. 
 
-
+The first step is to compile our java program. Within the directory **_process-mining_** run the command: 
+```
+./gradlew build
+```
+The second step is to convert the pcap file and the csv dataset into an admissible format by Disco: 
+```
+./gradlew runMessages
+./gradlew runReadings
+```
+The final step is to combine the resulting files in a single file to generate the business process : 
+```
+./gradlew Merge
+```
+The output files are saved in directory **_process-mining/data_** 
