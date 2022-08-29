@@ -105,9 +105,26 @@ The outputs are two CSV files saved in the directories _PLC_CSV_ and _process-mi
 The file saved in _process-mining/data_ is a timestamped dataset, it will be used for the business process mining.   
 The file saved in _PLC_CSV_ is an enriched dataset with a partial bounded history of registers, and additional informations such as stable states, slope values of measurements and relative setpoints. This dataset will be used for the invariant detection.   
 
- 
 
-## 4.2 Invariant inference
+## 4.2 Interactive graphs and statistical analysis
+  
+Execute the script **_Runchartplots.py_** :    
+```
+  python3 Runchartplots.py var1 var2 .... varn
+```
+The outputs of this execution are run-sequence plots of the specified variables in function of the simulation time.  
+  
+Execute the script **_Histplots_stats.py_** : 
+```
+  python3 Histplots_stats.py var  
+```
+The outputs of this execution are a histogram and statistical informations of the variable _var_.  
+These informations include :
+- The mean, median, standard deviation, the maximum and minimum values.  
+- Two tests are performed for the statistical distribution : Chi-squared test for uniformity and Shapiro-Wilk test for normality. 
+
+
+## 4.3 Invariant inference
 The invariant generation is done using the front-end tool of [Daikon](http://plse.cs.washington.edu/daikon/download/doc/daikon.html#convertcsv_002epl) for CSV dataset. To install Daikon follow the [guide](Installation_Daikon.sh).     
 Execute the bash script **_run.sh_** to generate the invariants. 
 ```
@@ -125,23 +142,6 @@ VAR1 == VAR3 && VAR1 != VAR4
 ```
 
 The results of the invariant analysis will be saved in the location **_Daikon_Invariants/daikon_results.txt_**.
-
-## 4.3 Interactive graphs and statistical analysis
-  
-Execute the script **_Runchartplots.py_** :    
-```
-  python3 _Runchartplots.py var1 var2 .... varn
-```
-The outputs of this execution are run-sequence plots of the specified variables in function of the simulation time.  
-  
-Execute the script **_Histplots_stats.py_** : 
-```
-  python3 Histplots_stats.py var  
-```
-The outputs of this execution are a histogram and statistical informations of the variable _var_.  
-These informations include :
-- The mean, median, standard deviation, the maximum and minimum values.  
-- Two tests are performed for the statistical distribution : Chi-squared test for uniformity and Shapiro-Wilk test for normality.  
 
 
 ## 4.4 Business process mining
