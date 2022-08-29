@@ -42,6 +42,10 @@ sudo apt install perl
 ```
 sudo apt install wireshark
 ```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To install from source
+```
+wget https://www.wireshark.org/download/src/wireshark-3.4.8.tar.xz -O /tmp/wireshark-3.0.0.tar.xz tar -xvf /tmp/wireshark-3.4.8.tar.xz cd /tmp/wireshark-3.0.0 sudo apt update && sudo apt dist-upgrade sudo apt install cmake libglib2.0-dev libgcrypt20-dev flex yacc bison byacc \ libpcap-dev qtbase5-dev libssh-dev libsystemd-dev qtmultimedia5-dev \ libqt5svg5-dev qttools5-dev cmake . make sudo make install
+```
 - Daikon 5.8.10 : [installation](Installation_Daikon.sh)
 - Fluxicon Disco 3.2.4 : [installation](https://fluxicon.com/disco/)  
  Disco is not supported by Unix-like operating systems. The users make use of [Wine](https://www.winehq.org/) to install and run this software.
@@ -72,8 +76,19 @@ To alter:
  - *port_of_the_PLC* edit lines from 145 to 147
  - To *add or remove* a *PLC* edit lines from 145 to 147
 
-## 3.2 Modbus message captures
-Tshark to generate pcap files, then wireshark to convert to csv
+## 3.2 Modbus message capture
+In parallel with main.py, Tshark has to be started. 
+To start capturing packets a capture interface has to be specified, Tshark will treat the first interface as the default interface and capture from it by default. In other words, `tshark` aliases to `tshark -i 1`
+To list all the interfaces available to Tshark and select another one
+```
+tshark -D 
+```
+Run the capture
+```
+tshark  -i 1 -w modbusPackets.pcap-ng
+```
+While running, the total number of captured packets will appear on the console
+Tshark generates a pcap-ng files that contains all the information about the captured packets.
 
 # 4. Information processing
 
