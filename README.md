@@ -89,8 +89,13 @@ Run the capture
 ```
 tshark  -i 1 -w modbusPackets.pcap-ng
 ```
-While running, the total number of captured packets will appear on the console
+While running, the total number of captured packets will appear on the console.
 Tshark generates a pcap-ng files that contains all the information about the captured packets.
+Once the pcap-ng file is created it can be translated int a CSV file by running
+```
+tshark -r modbusPackets.pcap-ng -T fields -E occurrence=f -e frame.time_epoch -e ip.src -e ip.dst -e ip.proto...
+```
+
 
 # 4. Information processing
 
