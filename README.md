@@ -103,11 +103,12 @@ tshark -r modbusPackets.pcap-ng -T fields -E occurrence=f -e frame.time_epoch -e
 
 The goal of the data processing is to convert the resulted files from the information gathering into datasets acceptable by invariant detection and business process mining tools.  
 
-Execute the script 	**_convertoCSV.py_** then **_mergeDatasets.py_** to convert the JSON files to a CSV datasets. 
+Executethe script 	**_convertoCSV.py_** by specifying an integer value of the variable _numberofPLCs_ that indicates the number of PLCs controlling the CPS model.   
+Execute **_mergeDatasets.py_** to convert the JSON files to a CSV datasets. 
 The column hold the values of the PLC registers of each PLC  with the following naming convention ```{name_of_the_PLC}_{name_of_the_Register}```.  
 The outputs are two CSV files saved in the directories _PLC_CSV_ and _process-mining/data_.  
  ```
-  python3 convertoCSV.py
+  python3 convertoCSV.py numberofPLCs
   python3 mergeDatasets.py 
 ```   
 The file saved in _process-mining/data_ is a timestamped dataset, it will be used for the business process mining.   
@@ -155,7 +156,7 @@ The conditional invariant will be saved in the location **_Daikon_Invariants/dai
 ## 4.4 Business process mining
 
 This step relies on Disco to generate graphs representing the business process. 
-Disco takes as input a txt file containing the exchanged messages between the PLCs on the CPS model and the values of the PLC registers.  
+Disco takes as input a CSV file containing the exchanged messages between the PLCs on the CPS model and the values of the PLC registers.  
 To create this txt file we use a java program to convert the pcap files and the CSV dataset generated from the previous steps. 
 
 The first step is to compile our java program. Within the directory **_process-mining_** run the command: 
