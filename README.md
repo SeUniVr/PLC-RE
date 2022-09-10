@@ -135,7 +135,7 @@ These informations include :
 
 ## 4.3 Invariant inference
 The invariant generation is done using the front-end tool of [Daikon](http://plse.cs.washington.edu/daikon/download/doc/daikon.html#convertcsv_002epl) for CSV dataset. To install Daikon follow the [guide](Installation_Daikon.sh).     
-Execute the bash script **_run.sh_** to generate the invariants. 
+Execute the bash script **_runDaikon.sh_** to generate the invariants. 
 ```
   ./runDaikon.sh 
 ```
