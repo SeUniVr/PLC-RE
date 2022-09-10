@@ -105,7 +105,7 @@ The goal of the data processing is to convert the resulted files from the inform
 
 Executethe script 	**_convertoCSV.py_** by specifying an integer value of the variable _numberofPLCs_ that indicates the number of PLCs controlling the CPS model.   
 Execute **_mergeDatasets.py_** to convert the JSON files to a CSV datasets. 
-The column hold the values of the PLC registers of each PLC  with the following naming convention ```{name_of_the_PLC}_{name_of_the_Register}```.  
+The column hold the values of the registers for each PLC  with the following naming convention ```{name_of_the_PLC}_{name_of_the_Register}```.  
 The outputs are two CSV files saved in the directories _PLC_CSV_ and _process-mining/data_.  
  ```
   python3 convertoCSV.py numberofPLCs
