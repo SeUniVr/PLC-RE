@@ -117,15 +117,15 @@ The file saved in _PLC_CSV_ is an enriched dataset with a partial bounded histor
 
 ## 4.2 Interactive graphs and statistical analysis
   
-Execute the script **_Runchartplots.py_** :    
+Execute the script **_runChartPlots.py_** :    
 ```
-  python3 Runchartplots.py var1 var2 .... varn
+  python3 runChartPlots.py var1 var2 .... varn
 ```
 The outputs of this execution are run-sequence plots of the specified variables in function of the simulation time.  
   
-Execute the script **_Histplots_stats.py_** : 
+Execute the script **_histPlots_Stats.py_** : 
 ```
-  python3 Histplots_stats.py var  
+  python3 histPlots_Stats.py var  
 ```
 The outputs of this execution are a histogram and statistical informations of the variable _var_.  
 These informations include :
@@ -137,7 +137,7 @@ These informations include :
 The invariant generation is done using the front-end tool of [Daikon](http://plse.cs.washington.edu/daikon/download/doc/daikon.html#convertcsv_002epl) for CSV dataset. To install Daikon follow the [guide](Installation_Daikon.sh).     
 Execute the bash script **_run.sh_** to generate the invariants. 
 ```
-  ./run.sh 
+  ./runDaikon.sh 
 ```
   
 This script offers a query system to target specific invariants and to specify conditional invariants.  
