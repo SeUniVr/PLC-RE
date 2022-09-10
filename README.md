@@ -87,7 +87,7 @@ While running, the total number of captured packets will appear on the console.
 Tshark generates a pcap-ng files that contains all the information about the captured packets.
 Once the pcap-ng file is created it can be translated int a CSV file by running
 ```
-tshark -r modbusPackets.pcap-ng -T fields -E occurrence=f -e frame.time_epoch -e ip.src -e ip.dst -e ip.proto...
+tshark -r modbusPackets.pcap-ng -T fields -E occurrence=f -e m -e t -e s -e d -e p -e L -e Cus:modbus.func_code:0:R -e Cus:modbus.bitval:0:R -e Cus:text:0:R -e Cus:modbus.regval_uint16:0:R -e Cus:mbtcp.trans_id:0:R -e i
 ```
 
 
