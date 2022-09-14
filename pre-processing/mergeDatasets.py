@@ -4,7 +4,7 @@ import csv
 	
 
 #CSV files converted from JSON PLCs readings (convertoCSV.py)
-filenames = glob.glob("PLC_CSV/*.csv")
+filenames = glob.glob("../PLC_CSV/*.csv")
 
 
 def cleanNull(filenames):
@@ -38,7 +38,7 @@ for f in filenames :
 
 mining_datasets = pd.concat(df_list_mining, axis=1).reset_index(drop=True)
 # Save dataset with the timestamp for the process mining.
-mining_datasets.to_csv(r'process-mining/data/PLC_Dataset.csv', index=False)
+mining_datasets.to_csv(r'../process-mining/data/PLC_Dataset.csv', index=False)
 
 print(mining_datasets)
 
@@ -101,7 +101,7 @@ print(inv_datasets)
 #inv_datasets.iloc[0:64800].to_csv(r'PLC_Dataset.csv', index=False)
 
 
-inv_datasets.to_csv(r'Daikon_Invariants/PLC_Dataset.csv', index=False)
+inv_datasets.to_csv(r'../Daikon_Invariants/PLC_Dataset.csv', index=False)
 
 print('****************************************************************************************')
 print ('************* DATASET FOR INVARIANT ANALYSIS GENERATED SUCCESSFULLY *******************')
