@@ -150,8 +150,8 @@ The conditional invariant will be saved in the location **_Daikon_Invariants/dai
 ## 4.4 Business process mining
 
 This step relies on Disco to generate graphs representing the business process. 
-Disco takes as input a CSV file containing the exchanged messages between the PLCs on the CPS model and the values of the PLC registers.  
-To create this txt file we use a java program to convert the pcap files and the CSV dataset generated from the previous steps. 
+Disco takes as input a CSV file containing the exchanged messages between the PLCs of the CPS model and the values of the PLCs registers.  
+To create this CSV file we use a java program to convert the pcap files and the CSV dataset generated from the previous steps. 
 
 The first step is to compile our java program. Within the directory **_process-mining_** run the command: 
 ```
@@ -162,7 +162,7 @@ The second step is to convert the pcap file and the csv dataset into an admissib
 ./gradlew runMessages
 ./gradlew runReadings
 ```
-The final step is to combine the resulting files in a single one to generate the business process : 
+The final step is to combine the resulting files in a single one to generate the business process graphs: 
 ```
 ./gradlew Merge
 ```
