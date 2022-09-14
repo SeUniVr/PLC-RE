@@ -4,7 +4,7 @@ import csv
 	
 
 #CSV files converted from JSON PLCs readings (convertoCSV.py)
-filenames = glob.glob("../PLC_CSV/*.csv")
+filenames = glob.glob("PLC_CSV/*.csv")
 
 
 def cleanNull(filenames):
@@ -101,7 +101,7 @@ print(inv_datasets)
 #inv_datasets.iloc[0:64800].to_csv(r'PLC_Dataset.csv', index=False)
 
 
-inv_datasets.to_csv(r'../Daikon_Invariants/PLC_Dataset.csv', index=False)
+inv_datasets.to_csv(r'../daikon/Daikon_Invariants/PLC_Dataset.csv', index=False)
 
 print('****************************************************************************************')
 print ('************* DATASET FOR INVARIANT ANALYSIS GENERATED SUCCESSFULLY *******************')
