@@ -24,7 +24,7 @@ public class MinePlcReadings {
     private List<LogEntry> log;
 
     public static void main(String[] argv) throws IOException {
-        MinePlcReadings main = new MinePlcReadings("data/PLC_Dataset.csv");
+        MinePlcReadings main = new MinePlcReadings("data/PLC_Dataset_TS.csv");
         main.readData();
         main.process();
         main.computeEvents();
