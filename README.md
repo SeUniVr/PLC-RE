@@ -170,3 +170,9 @@ The output files are saved in directory **_process-mining/data_**.
 
 To generate the business process graphs:    
 _Launch Disco > Open File > Select the file **MergeEvents.csv** > Define each column role > Click Start Import_
+
+## Experimental Data
+
+* [PLC registers captures (JSON)](PLC-RE/experimental-data/historian)
+* [Dataset register values (CSV)](PLC-RE/experimental-data/csv)
+* [Network capture (PCAPNG)](PLC-RE/experimental-data/network)
