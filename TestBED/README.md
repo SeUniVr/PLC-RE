@@ -13,8 +13,9 @@ Build the simulink connection script, to interface the OpenPLC Simulink driver a
 To compile:  
 g++ simlink.cpp -o simlink -pthread
 
-On Windows: use Cygwin  
-https://www.cygwin.com/
+## Matlab Simulink
+![Model](/simulink/Images/SimulinkSimplifiedModel.png "Simulink Simplified Model")
+
 
 # 3. Run
 
