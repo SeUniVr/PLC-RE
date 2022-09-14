@@ -38,7 +38,7 @@ for f in filenames :
 
 mining_datasets = pd.concat(df_list_mining, axis=1).reset_index(drop=True)
 # Save dataset with the timestamp for the process mining.
-mining_datasets.to_csv(r'../process-mining/data/PLC_Dataset.csv', index=False)
+mining_datasets.to_csv(r'../process-mining/data/PLC_Dataset_TS.csv', index=False)
 
 print(mining_datasets)
 
