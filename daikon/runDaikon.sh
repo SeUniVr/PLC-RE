@@ -2,7 +2,7 @@
 
 #Adjust Daikon directory
 export DAIKONDIR=/absolute_path_to_daikon/daikon-5.8.10; source $DAIKONDIR/scripts/daikon.bashrc
-cd ../Daikon_Invariants/
+cd Daikon_Invariants/
 perl $DAIKONDIR/scripts/convertcsv.pl PLC_Dataset.csv
 java -cp $DAIKONDIR/daikon.jar daikon.Daikon --nohierarchy PLC_Dataset.decls PLC_Dataset.dtrace > daikon_results.txt
 echo "Invariants generated successfully :"
