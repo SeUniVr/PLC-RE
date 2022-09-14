@@ -14,7 +14,7 @@ To compile:
 g++ simlink.cpp -o simlink -pthread
 
 ## Matlab Simulink
-![Model](/simulink/Images/SimulinkSimplifiedModel.png "Simulink Simplified Model")
+![Model](/TestBED/simulink/Images/SimulinkSimplifiedModel.png "Simulink Simplified Model")
 
 
 # 3. Run
