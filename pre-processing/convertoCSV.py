@@ -5,8 +5,8 @@ import os
 import sys
 
 
-path_csv ='../PLC_CSV/'
-path_daikon = '../Daikon_Invariants/'
+path_csv ='PLC_CSV/'
+path_daikon = '../daikon/Daikon_Invariants/'
 isExistCSV = os.path.exists(path_csv)
 isExistDaikon = os.path.exists(path_daikon)
 
@@ -15,8 +15,8 @@ if not isExistCSV:
     
 if not isExistDaikon:
     os.mkdir(path_daikon)
-    os.mkdir('../Daikon_Invariants/')
-    f = open("../Daikon_Invariants/Inv_conditions.spinfo", "a")
+    os.mkdir('../daikon/Daikon_Invariants/')
+    f = open("../daikon/Daikon_Invariants/Inv_conditions.spinfo", "a")
     f.write("PPT_NAME aprogram.point:::POINT\n VAR1 > VAR2")
     f.close()
 
@@ -76,7 +76,7 @@ def convert(plc) :
 
          
     print(df)
-    df.to_csv(r'../PLC_CSV/PLC'+str(plc)+'Dataset.csv', index = False)
+    df.to_csv(r'PLC_CSV/PLC'+str(plc)+'Dataset.csv', index = False)
 for x in range(1,int(sys.argv[1])+1):         
     convert(x)
 
