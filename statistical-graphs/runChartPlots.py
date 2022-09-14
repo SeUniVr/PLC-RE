@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sys
 
-df = pd.read_csv('../Daikon_Invariants/PLC_Dataset.csv')
+df = pd.read_csv('../daikon/Daikon_Invariants/PLC_Dataset.csv')
 
 for x in range(1,len(sys.argv)):
 
