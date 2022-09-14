@@ -36,6 +36,7 @@ The model above is controlling a SWAT system composed of two tanks (Tank1 left, 
 
 - Open the file simulink/Model/SimplifedModel.slx in Matlab Simulink, that contains the aforementioned SWAT system
 - Open the file simulink/Model/init.m, that contains the variables that define the water flow, the diameter of the pipes, etc...
+
 ![Init](/TestBED/simulink/Images/Init.png "Init")
 |:--:|
 | <b>Init script</b>|
@@ -44,6 +45,7 @@ The model above is controlling a SWAT system composed of two tanks (Tank1 left, 
 - Run init.m
 - Run SimplifedModel.slx
 A monitor, like the one in the following picture should appear
+
 ![Monitor](/TestBED/simulink/Images/OutputMonitor.png "Monitor")
 |:--:|
 | <b>Monitor</b>|
