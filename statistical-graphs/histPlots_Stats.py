@@ -5,7 +5,7 @@ from scipy.stats import shapiro
 from scipy.stats import chisquare
 
 
-df = pd.read_csv('../Daikon_Invariants/PLC_Dataset.csv')
+df = pd.read_csv('../daikon/Daikon_Invariants/PLC_Dataset.csv')
 
 
 print(f"Chi-squared test for uniformity")
