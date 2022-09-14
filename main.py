@@ -131,7 +131,7 @@ def read_registers(name,ip,port,master):
     
     ora=datetime.now(tz=None)
 
-    with open(f'historian/{name}-{ip}-{port}@{ora}.json', 'w') as sp:
+    with open(f'historian/plc{name}-{ip}-{port}@{ora}.json', 'w') as sp:
         sp.write(json.dumps(single_plc_registers, indent=4))
 
 #function that asks the user to input the ip and port of the PLCs and outputs a list of tuples
@@ -142,7 +142,7 @@ def ask_plc():
         if ip=="":
             break
         port=input("Insert the port of the PLC: ")
-        name=input("Insert the name of the PLC: ")
+        name=str(input("Insert the number of the PLC: "))
         plc_list.append((name,ip,port))
     return(plc_list)
 
