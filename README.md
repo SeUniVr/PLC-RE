@@ -7,6 +7,7 @@
 - Invariant inference
 - Business process mining
 
+![RE drawio](https://user-images.githubusercontent.com/10734889/193014155-45176133-cd85-42b0-9b2f-6d456b74ba48.png)
 
 # 2. Requirements
 
